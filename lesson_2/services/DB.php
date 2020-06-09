@@ -3,16 +3,17 @@
 
 namespace app\services;
 
+use app\interfaces\DBI;
 
 class DB implements DBI
 {
-    public function find($sql)
+    public function queryOne($sql)
     {
-        return $sql . "find";
+        return $sql . "queryOne";
     }
 
-    public function findAll($sql)
+    public function queryAll($sql)
     {
-        return $sql . "findAll";
+        return $sql . "queryAll";
     }
 }
