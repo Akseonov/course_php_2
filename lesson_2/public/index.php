@@ -1,15 +1,13 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/../services/Autoloader.php';
-//include $_SERVER['DOCUMENT_ROOT'] . '/../models/Good.php';
-//include $_SERVER['DOCUMENT_ROOT'] . '/../services/DB.php';
-//use \services\DB;
+require $_SERVER['DOCUMENT_ROOT'] . '/../services/Autoloader.php';
+
 spl_autoload_register([new \app\services\Autoloader(), 'loadClass']);
 
+use app\models\User;
 
 
-$db = new \app\services\DB();
-$user = new \app\models\User($db);
+$user = new User();
 echo $user->getAll();
 echo "<br>";
 echo $user->getOne(12);
